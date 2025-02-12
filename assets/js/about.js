@@ -1,6 +1,5 @@
 window.initializeAbout = function() {
     renderSkillCircles();
-    initializeAnimations();
 };
 
 const skillCircles = [
@@ -24,9 +23,8 @@ function renderSkillCircles() {
             <div class="circular-progress">
                 <div class="circular-progress-inner">
                     <div class="circular-progress-circle">
-                        <div class="circular-progress-bar"
-                             style="transform: rotate(${skill.percentage * 3.6}deg); 
-                                    border-color: ${skill.color};">
+                        <div class="circular-progress-bar full-circle"
+                             style="border-color: ${skill.color};">
                         </div>
                     </div>
                     <div class="circular-progress-value">
@@ -38,24 +36,4 @@ function renderSkillCircles() {
     `).join('');
 
     container.innerHTML = skillsHTML;
-}
-
-function initializeAnimations() {
-  console.log('Setting up animations...');
-  const observer = new IntersectionObserver(
-      (entries, observer) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.classList.add('animate');
-                  observer.unobserve(entry.target);
-              }
-          });
-      },
-      { threshold: 0.1 }
-  );
-
-  // Observe each circular progress element
-  document.querySelectorAll('.circular-progress').forEach(circle => {
-      observer.observe(circle);
-  });
 }

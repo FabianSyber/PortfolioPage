@@ -25,7 +25,7 @@ const projects = [
     summary: "Project where we were investigating how we can use recycled glasswool in a new way to create new optimized acoustic panels.",
     image: "/images/refab/a.png",
     date: "January 15, 2025",
-    link: "/posts/refab/",
+    link: "/posts/refab/index.html",
     categories: ["Design", "Digital Fabrication"]
   },
   {

@@ -52,6 +52,11 @@
     transition: all 1s ease-in-out;
 }
 
+.circular-progress-bar.full-circle {
+    transform: rotate(360deg);
+    transition: none;
+}
+
 .circular-progress-value {
     position: absolute;
     top: 50%;
