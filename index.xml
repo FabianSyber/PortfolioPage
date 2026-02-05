@@ -1,96 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Fabian</title>
-    <link>http://fabiansyber.se/</link>
-    <description>Recent content on Fabian</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jun 2020 08:59:13 +0600</lastBuildDate>
-    
-	<atom:link href="http://fabiansyber.se/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Deep Architecture</title>
-      <link>http://fabiansyber.se/posts/deeparch/</link>
-      <pubDate>Mon, 08 Jun 2020 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/deeparch/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Urban space design</title>
-      <link>http://fabiansyber.se/posts/urbanspace/</link>
-      <pubDate>Fri, 20 Dec 2019 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/urbanspace/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Data-ville</title>
-      <link>http://fabiansyber.se/posts/dataville/</link>
-      <pubDate>Mon, 10 Jun 2019 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/dataville/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Cliff of Babylon</title>
-      <link>http://fabiansyber.se/posts/babylon/</link>
-      <pubDate>Wed, 10 Apr 2019 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/babylon/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Frankie</title>
-      <link>http://fabiansyber.se/posts/frankie/</link>
-      <pubDate>Mon, 10 Dec 2018 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/frankie/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Kathak palace</title>
-      <link>http://fabiansyber.se/posts/indiaba/</link>
-      <pubDate>Mon, 20 Jun 2016 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/indiaba/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Ahmedabad Technology mapping</title>
-      <link>http://fabiansyber.se/posts/indiamap/</link>
-      <pubDate>Tue, 05 Jan 2016 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/indiamap/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Schwarzchild Villa</title>
-      <link>http://fabiansyber.se/posts/schwarzchild/</link>
-      <pubDate>Sun, 20 Dec 2015 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/schwarzchild/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-    <item>
-      <title>Ordinary dreams</title>
-      <link>http://fabiansyber.se/posts/ordinarydreams/</link>
-      <pubDate>Mon, 08 Jun 2015 08:59:13 +0600</pubDate>
-      
-      <guid>http://fabiansyber.se/posts/ordinarydreams/</guid>
-      <description>#slide-window {position: relative;width: 100%;height: calc(100vh - 50px);overflow: hidden;top: 50px;left: 0px;}#slides-list {width: 100%;height: calc(100vh - 50px);position: absolute;object-fit: contain;margin: 0px;padding: 0px;-webkit-transform: translate3d(0px, 0px, 0px);transform: translate3d(0px, 0px, 0px);transition: all 0.66s ease;-webkit-transition: all 0.66s ease;}.slide {list-style: none;position: relative;float: left;margin: 0;padding: 0;width: 100%;height: calc(100vh - 50px);background: #fff;text-align: center;line-height: 100%;background-size: cover;background-position: 50% 50%;color: #fff;-webkit-transform: translate3d(0px, 0px, 0px);-webkit-transform-style: preserve-3d;}.</description>
-    </item>
-    
-  </channel>
-</rss>
