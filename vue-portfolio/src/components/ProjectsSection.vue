@@ -65,13 +65,10 @@
               <div class="flex justify-between items-start mb-4">
                 <h3 class="text-xl font-bold text-gray-800">{{ project.title }}</h3>
                 <button 
-                  @click="toggleExpand(project.id)"
+                  @click="openProjectModal(project.id)"
                   class="text-gray-400 hover:text-primary-600 transition-colors duration-300"
                 >
-                  <i :class="[
-                    'fas text-lg transition-transform duration-300',
-                    expandedProject === project.id ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'
-                  ]"></i>
+                  <i class="fas fa-expand text-lg"></i>
                 </button>
               </div>
 
@@ -94,49 +91,22 @@
                 </span>
               </div>
 
-              <!-- Expanded Content -->
-              <div 
-                v-if="expandedProject === project.id"
-                class="mt-4 pt-4 border-t border-gray-200 animate-scale-up"
-              >
-                <p class="text-gray-600 mb-4">{{ project.fullDescription }}</p>
-                
-                <div class="space-y-3">
-                  <div v-if="project.features">
-                    <h4 class="font-semibold text-gray-800 mb-2">Key Features:</h4>
-                    <ul class="space-y-1">
-                      <li 
-                        v-for="feature in project.features" 
-                        :key="feature"
-                        class="flex items-start text-gray-600"
-                      >
-                        <i class="fas fa-check text-success-500 mr-2 mt-1"></i>
-                        <span>{{ feature }}</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="flex gap-3 pt-4">
-                    <a 
-                      v-if="project.demoLink"
-                      :href="project.demoLink"
-                      target="_blank"
-                      class="flex-1 btn-primary text-center py-2"
-                    >
-                      <i class="fas fa-external-link-alt mr-2"></i>
-                      Live Demo
-                    </a>
-                    <a 
-                      v-if="project.githubLink"
-                      :href="project.githubLink"
-                      target="_blank"
-                      class="flex-1 btn-secondary text-center py-2"
-                    >
-                      <i class="fab fa-github mr-2"></i>
-                      View Code
-                    </a>
-                  </div>
-                </div>
+              <!-- Key Features (Always visible in small card) -->
+              <div class="mt-4">
+                <h4 class="font-semibold text-gray-800 mb-2 text-sm">Key Features:</h4>
+                <ul class="space-y-1">
+                  <li 
+                    v-for="feature in project.features.slice(0, 3)" 
+                    :key="feature"
+                    class="flex items-start text-gray-600 text-sm"
+                  >
+                    <i class="fas fa-check text-success-500 mr-2 mt-0.5 text-xs"></i>
+                    <span class="truncate">{{ feature }}</span>
+                  </li>
+                  <li v-if="project.features.length > 3" class="text-gray-500 text-xs pl-5">
+                    +{{ project.features.length - 3 }} more features
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -145,14 +115,11 @@
               <div class="flex justify-between items-center">
                 <span class="text-sm text-gray-500">{{ project.year }}</span>
                 <button 
-                  @click="toggleExpand(project.id)"
+                  @click="openProjectModal(project.id)"
                   class="text-primary-600 hover:text-primary-700 font-medium flex items-center"
                 >
-                  {{ expandedProject === project.id ? 'Show Less' : 'Learn More' }}
-                  <i :class="[
-                    'fas ml-2 transition-transform duration-300',
-                    expandedProject === project.id ? 'fa-chevron-up' : 'fa-chevron-down'
-                  ]"></i>
+                  View Details
+                  <i class="fas fa-arrow-right ml-2"></i>
                 </button>
               </div>
             </div>
@@ -168,6 +135,149 @@
         </button>
       </div>
     </div>
+
+    <!-- Full Screen Project Modal -->
+    <div 
+      v-if="selectedProject"
+      class="fixed inset-0 z-50 overflow-hidden bg-black/95 backdrop-blur-sm"
+      @click.self="closeProjectModal"
+    >
+      <div class="absolute inset-0 overflow-y-auto">
+        <!-- Close Button -->
+        <button 
+          @click="closeProjectModal"
+          class="fixed top-6 right-6 z-50 text-white hover:text-gray-300 transition-colors duration-300"
+        >
+          <i class="fas fa-times text-3xl"></i>
+        </button>
+
+        <!-- Modal Content -->
+        <div class="min-h-screen">
+          <!-- Scrolling Image Header -->
+          <div class="sticky top-0 z-40 bg-gradient-to-b from-black/80 to-transparent">
+            <div class="overflow-x-auto scrollbar-hide">
+              <div class="flex space-x-4 p-4">
+                <div 
+                  v-for="(img, index) in projectImages" 
+                  :key="index"
+                  class="flex-shrink-0"
+                >
+                  <img 
+                    :src="img" 
+                    :alt="`${selectedProject.title} image ${index + 1}`"
+                    class="h-48 w-auto rounded-lg object-cover shadow-lg hover:scale-105 transition-transform duration-300"
+                    @click="setActiveImage(index)"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="container mx-auto px-4 py-8 max-w-6xl">
+            <!-- Project Header -->
+            <div class="mb-8">
+              <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                {{ selectedProject.title }}
+              </h1>
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="px-4 py-2 bg-white/10 text-white rounded-full text-sm font-medium">
+                  {{ selectedProject.category }}
+                </span>
+                <span class="text-gray-300">{{ selectedProject.year }}</span>
+                <div class="flex gap-2">
+                  <a 
+                    v-if="selectedProject.demoLink"
+                    :href="selectedProject.demoLink"
+                    target="_blank"
+                    class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors duration-300"
+                  >
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    Live Demo
+                  </a>
+                  <a 
+                    v-if="selectedProject.githubLink"
+                    :href="selectedProject.githubLink"
+                    target="_blank"
+                    class="px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition-colors duration-300"
+                  >
+                    <i class="fab fa-github mr-2"></i>
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="grid lg:grid-cols-3 gap-8">
+              <!-- Main Content Column -->
+              <div class="lg:col-span-2">
+                <!-- Full Description -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 mb-8">
+                  <h2 class="text-2xl font-bold text-white mb-4">Project Overview</h2>
+                  <p class="text-gray-300 leading-relaxed">
+                    {{ selectedProject.fullDescription }}
+                  </p>
+                </div>
+
+                <!-- Post Content (if available) -->
+                <div 
+                  v-if="postContent"
+                  class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 mb-8"
+                >
+                  <div class="prose prose-invert max-w-none" v-html="postContent"></div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <h2 class="text-2xl font-bold text-white mb-4">Key Features</h2>
+                  <div class="grid md:grid-cols-2 gap-4">
+                    <div 
+                      v-for="feature in selectedProject.features" 
+                      :key="feature"
+                      class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors duration-300"
+                    >
+                      <i class="fas fa-check text-success-400 mr-3 mt-1"></i>
+                      <span class="text-gray-300">{{ feature }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sidebar Column -->
+              <div class="space-y-6">
+                <!-- Technologies -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <h3 class="text-xl font-bold text-white mb-4">Technologies</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span 
+                      v-for="tech in selectedProject.technologies" 
+                      :key="tech"
+                      class="px-3 py-2 bg-white/10 text-gray-300 rounded-lg text-sm"
+                    >
+                      {{ tech }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Active Image Preview -->
+                <div 
+                  v-if="activeImage"
+                  class="bg-white/5 backdrop-blur-sm rounded-2xl p-6"
+                >
+                  <h3 class="text-xl font-bold text-white mb-4">Image Preview</h3>
+                  <img 
+                    :src="activeImage" 
+                    :alt="`${selectedProject.title} preview`"
+                    class="w-full rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -175,8 +285,11 @@
 import { ref, computed } from 'vue'
 
 const activeCategory = ref('all')
-const expandedProject = ref<string | null>(null)
 const hoveredProject = ref<string | null>(null)
+const selectedProject = ref<any>(null)
+const projectImages = ref<string[]>([])
+const activeImage = ref<string>('')
+const postContent = ref<string>('')
 
 const categories = [
   { id: 'all', label: 'All Projects' },
@@ -305,8 +418,131 @@ const filteredProjects = computed(() => {
   return projects.filter(project => project.category === activeCategory.value)
 })
 
-const toggleExpand = (projectId: string) => {
-  expandedProject.value = expandedProject.value === projectId ? null : projectId
+const openProjectModal = async (projectId: string) => {
+  const project = projects.find(p => p.id === projectId)
+  if (!project) return
+  
+  selectedProject.value = project
+  activeImage.value = ''
+  postContent.value = ''
+  
+  // Load images for this project
+  await loadProjectImages(project.id)
+  
+  // Load post content if available
+  await loadPostContent(project.id)
+  
+  // Prevent body scroll when modal is open
+  document.body.style.overflow = 'hidden'
+}
+
+const closeProjectModal = () => {
+  selectedProject.value = null
+  projectImages.value = []
+  activeImage.value = ''
+  postContent.value = ''
+  
+  // Restore body scroll
+  document.body.style.overflow = ''
+}
+
+const setActiveImage = (index: number) => {
+  if (projectImages.value[index]) {
+    activeImage.value = projectImages.value[index]
+  }
+}
+
+const loadProjectImages = async (projectId: string) => {
+  // Map project IDs to image directories
+  const imageDirs: Record<string, string> = {
+    specklca: 'specklca',
+    augmentedarchitect: 'augmentedarchitect',
+    deeparch: 'deeparch',
+    refab: 'ReFab',
+    frankie: 'frankie',
+    hammarkullen: 'hammarkullen'
+  }
+  
+  const imageDir = imageDirs[projectId]
+  if (!imageDir) {
+    // Fallback to placeholder images if no directory found
+    const placeholderImages = [
+      'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80'
+    ]
+    projectImages.value = placeholderImages
+    if (placeholderImages.length > 0) {
+      activeImage.value = placeholderImages[0]
+    }
+    return
+  }
+  
+  // In a real implementation, you would load images from your server
+  // For now, we'll use a sample of images from the directory
+  const sampleImages = [
+    `/images/${imageDir}/a.png`,
+    `/images/${imageDir}/b.png`,
+    `/images/${imageDir}/c.png`,
+    `/images/${imageDir}/d.png`
+  ].filter(img => {
+    // Check if image exists (in real implementation, this would be a server call)
+    return true // Assume they exist for demonstration
+  })
+  
+  // Use actual images if available, otherwise use placeholders
+  if (sampleImages.length > 0) {
+    projectImages.value = sampleImages
+    activeImage.value = sampleImages[0]
+  } else {
+    const placeholderImages = [
+      'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80'
+    ]
+    projectImages.value = placeholderImages
+    if (placeholderImages.length > 0) {
+      activeImage.value = placeholderImages[0]
+    }
+  }
+}
+
+const loadPostContent = async (projectId: string) => {
+  // Map project IDs to post directories
+  const postDirs: Record<string, string> = {
+    specklca: 'specklca',
+    augmentedarchitect: 'augmentedarchitect',
+    deeparch: 'deeparch',
+    refab: 'refab',
+    frankie: 'frankie',
+    hammarkullen: 'hammarkullen'
+  }
+  
+  const postDir = postDirs[projectId]
+  if (!postDir) {
+    postContent.value = ''
+    return
+  }
+  
+  // In a real implementation, you would fetch the HTML content from your server
+  // For demonstration, we'll show a message that post content is available
+  postContent.value = `
+    <div class="space-y-4">
+      <h3 class="text-xl font-bold text-white">Project Documentation</h3>
+      <p class="text-gray-300">
+        Detailed project documentation is available in the posts directory.
+        This would include project specifications, design process, technical details,
+        and implementation notes.
+      </p>
+      <div class="bg-white/10 p-4 rounded-lg">
+        <p class="text-gray-300 text-sm">
+          <strong>Post location:</strong> /posts/${postDir}/index.html
+        </p>
+        <p class="text-gray-300 text-sm mt-2">
+          In a production environment, this content would be loaded dynamically
+          from the corresponding HTML file in the posts folder.
+        </p>
+      </div>
+    </div>
+  `
 }
 </script>
 
