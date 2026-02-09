@@ -1,30 +1,27 @@
 <template>
-  <section id="projects" class="section-container bg-gradient-to-b from-gray-50 to-white">
+  <section id="projects" class="section-container bg-[#0a0a0a] py-20">
     <div class="max-w-7xl mx-auto">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-            Featured Projects
-          </span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          Explore my architectural and digital projects that blend design, technology, and innovation.
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          Featured Projects
+        </h1>
+        <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">
+          Explore cutting-edge projects demonstrating innovative design and development.
         </p>
-        <div class="w-24 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
       </div>
 
-      <!-- Project Filter -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <!-- Category Filters - PixiJS Style -->
+      <div class="flex flex-wrap justify-center gap-4 mb-16">
         <button 
           v-for="category in categories" 
           :key="category.id"
           @click="activeCategory = category.id"
           :class="[
-            'px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1',
-            activeCategory === category.id 
-              ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg' 
-              : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
+            'px-8 py-3 rounded-lg font-medium transition-all duration-300 border',
+            activeCategory === category.id
+              ? 'bg-white text-black border-white font-semibold'
+              : 'bg-transparent text-gray-300 border-gray-700 hover:border-gray-500 hover:text-white'
           ]"
         >
           {{ category.label }}
@@ -39,7 +36,7 @@
           class="group"
         >
           <div 
-            class="bg-white rounded-3xl overflow-hidden shadow-xl card-hover h-full flex flex-col"
+            class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 card-hover h-full flex flex-col hover:border-gray-600 transition-all duration-300"
             @mouseenter="hoveredProject = project.id"
             @mouseleave="hoveredProject = null"
           >
@@ -63,7 +60,7 @@
             <!-- Project Content -->
             <div class="p-6 flex-grow">
               <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-bold text-gray-800">{{ project.title }}</h3>
+                <h3 class="text-xl font-bold text-white">{{ project.title }}</h3>
                 <button 
                   @click="openProjectModal(project.id)"
                   class="text-gray-400 hover:text-primary-600 transition-colors duration-300"
@@ -72,20 +69,20 @@
                 </button>
               </div>
 
-              <p class="text-gray-600 mb-4">{{ project.shortDescription }}</p>
+              <p class="text-gray-400 mb-4">{{ project.shortDescription }}</p>
 
               <!-- Technologies -->
               <div class="flex flex-wrap gap-2 mb-4">
                 <span 
                   v-for="tech in project.technologies.slice(0, 3)" 
                   :key="tech"
-                  class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full"
+                  class="px-3 py-1 bg-gray-800 text-gray-300 text-xs font-medium rounded-lg border border-gray-700"
                 >
                   {{ tech }}
                 </span>
                 <span 
                   v-if="project.technologies.length > 3"
-                  class="px-3 py-1 bg-gray-100 text-gray-500 text-xs font-medium rounded-full"
+                  class="px-3 py-1 bg-gray-800 text-gray-500 text-xs font-medium rounded-lg border border-gray-700"
                 >
                   +{{ project.technologies.length - 3 }}
                 </span>
@@ -93,14 +90,16 @@
 
               <!-- Key Features (Always visible in small card) -->
               <div class="mt-4">
-                <h4 class="font-semibold text-gray-800 mb-2 text-sm">Key Features:</h4>
+                <h4 class="font-semibold text-gray-400 mb-2 text-sm">Key Features:</h4>
                 <ul class="space-y-1">
                   <li 
                     v-for="feature in project.features.slice(0, 3)" 
                     :key="feature"
-                    class="flex items-start text-gray-600 text-sm"
+                    class="flex items-start text-gray-300 text-sm"
                   >
-                    <i class="fas fa-check text-success-500 mr-2 mt-0.5 text-xs"></i>
+                    <svg class="w-3 h-3 text-gray-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
                     <span class="truncate">{{ feature }}</span>
                   </li>
                   <li v-if="project.features.length > 3" class="text-gray-500 text-xs pl-5">
@@ -111,15 +110,17 @@
             </div>
 
             <!-- Project Footer -->
-            <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <div class="px-6 py-4 bg-gray-800/50 border-t border-gray-700">
               <div class="flex justify-between items-center">
-                <span class="text-sm text-gray-500">{{ project.year }}</span>
+                <span class="text-sm text-gray-400">{{ project.year }}</span>
                 <button 
                   @click="openProjectModal(project.id)"
-                  class="text-primary-600 hover:text-primary-700 font-medium flex items-center"
+                  class="text-white hover:text-gray-200 font-medium flex items-center"
                 >
                   View Details
-                  <i class="fas fa-arrow-right ml-2"></i>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -127,10 +128,9 @@
         </div>
       </div>
 
-      <!-- View All Button -->
-      <div class="text-center mt-12">
-        <button class="btn-primary px-8 py-4 text-lg">
-          <i class="fas fa-th-large mr-2"></i>
+      <!-- View All Button - PixiJS Style -->
+      <div class="text-center mt-16">
+        <button class="px-8 py-3.5 rounded-lg bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 border border-white text-lg">
           View All Projects
         </button>
       </div>
@@ -143,12 +143,14 @@
       @click.self="closeProjectModal"
     >
       <div class="absolute inset-0 overflow-y-auto">
-        <!-- Close Button -->
+        <!-- Close Button - PixiJS Style -->
         <button 
           @click="closeProjectModal"
-          class="fixed top-6 right-6 z-50 text-white hover:text-gray-300 transition-colors duration-300"
+          class="fixed top-6 right-6 z-50 w-12 h-12 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 border border-gray-700"
         >
-          <i class="fas fa-times text-3xl"></i>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
 
         <!-- Modal Content -->
