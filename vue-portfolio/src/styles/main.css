@@ -66,8 +66,9 @@
   }
 
   .bg-pattern {
-    @apply pattern-cross pattern-gray-400 pattern-bg-gray-100 
-    pattern-size-16 pattern-opacity-20 bg-fixed;
+    @apply fixed inset-0 bg-fixed pattern-cross pattern-gray-400 pattern-bg-gray-100 
+    pattern-size-16 pattern-opacity-20
+    -z-10;
   }
 
   .card-style {
@@ -82,7 +83,7 @@
   }
   
   .section-container {
-    @apply container mx-auto p-12;
+    @apply p-12 px-36 md:px-12 sm:px-4;
   }
   
   .skill-badge {

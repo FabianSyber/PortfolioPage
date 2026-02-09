@@ -11,7 +11,7 @@
         <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
           Interested in collaboration, have a project in mind, or just want to chat about architecture and technology?
         </p>
-        <div class="w-24 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto"></div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12">

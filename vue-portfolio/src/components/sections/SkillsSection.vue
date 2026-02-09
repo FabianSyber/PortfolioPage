@@ -4,21 +4,21 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+          <span class="text-secondary-500">
             Skills & Expertise
           </span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
           A diverse skill set that bridges architecture, programming, and design thinking.
         </p>
-        <div class="w-24 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-2 bg-secondary-500 mx-auto"></div>
       </div>
 
       <!-- Skills Categories -->
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Architecture Skills -->
-        <div class="bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 shadow-xl card-hover">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+        <div class="card-style">
+          <div class="w-16 h-16 bg-primary-100 flex items-center justify-center mb-6 border-2 border-primary-200">
             <i class="fas fa-building text-primary-600 text-2xl"></i>
           </div>
           <h3 class="text-2xl font-bold text-gray-800 mb-4">Architecture</h3>
@@ -35,9 +35,9 @@
                 <span class="font-medium text-gray-700">{{ skill.name }}</span>
                 <span class="text-primary-600 font-bold">{{ skill.level }}%</span>
               </div>
-              <div class="h-2 bg-gray-200 rounded-full overflow-hidden mt-1">
+              <div class="h-2 bg-gray-200 overflow-hidden mt-1">
                 <div 
-                  class="h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full transition-all duration-1000"
+                  class="h-full bg-gradient-to-r from-primary-400 to-primary-600 transition-all duration-1000"
                   :style="{ width: skill.level + '%' }"
                   :class="{ 'animate-pulse': expandedSkill === skill.name }"
                 ></div>
@@ -46,14 +46,14 @@
               <!-- Skill Details -->
               <div 
                 v-if="expandedSkill === skill.name"
-                class="mt-3 p-4 bg-primary-50 rounded-xl animate-scale-up"
+                class="mt-3 p-4 bg-primary-50 animate-scale-up"
               >
                 <p class="text-sm text-gray-600 mb-2">{{ skill.description }}</p>
                 <div class="flex flex-wrap gap-2">
                   <span 
                     v-for="tool in skill.tools" 
                     :key="tool"
-                    class="px-3 py-1 bg-white text-primary-700 text-xs font-medium rounded-full"
+                    class="px-3 py-1 bg-white text-primary-700 text-xs font-medium"
                   >
                     {{ tool }}
                   </span>
@@ -64,8 +64,8 @@
         </div>
 
         <!-- Programming Skills -->
-        <div class="bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 shadow-xl card-hover">
-          <div class="w-16 h-16 bg-secondary-100 rounded-2xl flex items-center justify-center mb-6">
+        <div class="card-style">
+          <div class="w-16 h-16 bg-secondary-100 flex items-center justify-center mb-6 border-2 border-secondary-200">
             <i class="fas fa-code text-secondary-600 text-2xl"></i>
           </div>
           <h3 class="text-2xl font-bold text-gray-800 mb-4">Programming</h3>
@@ -82,9 +82,9 @@
                 <span class="font-medium text-gray-700">{{ skill.name }}</span>
                 <span class="text-secondary-600 font-bold">{{ skill.level }}%</span>
               </div>
-              <div class="h-2 bg-gray-200 rounded-full overflow-hidden mt-1">
+              <div class="h-2 bg-gray-200 overflow-hidden mt-1">
                 <div 
-                  class="h-full bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-full transition-all duration-1000"
+                  class="h-full bg-gradient-to-r from-secondary-400 to-secondary-600 transition-all duration-1000"
                   :style="{ width: skill.level + '%' }"
                   :class="{ 'animate-pulse': expandedSkill === skill.name }"
                 ></div>
@@ -93,14 +93,14 @@
               <!-- Skill Details -->
               <div 
                 v-if="expandedSkill === skill.name"
-                class="mt-3 p-4 bg-secondary-50 rounded-xl animate-scale-up"
+                class="mt-3 p-4 bg-secondary-50 animate-scale-up"
               >
                 <p class="text-sm text-gray-600 mb-2">{{ skill.description }}</p>
                 <div class="flex flex-wrap gap-2">
                   <span 
                     v-for="tool in skill.tools" 
                     :key="tool"
-                    class="px-3 py-1 bg-white text-secondary-700 text-xs font-medium rounded-full"
+                    class="px-3 py-1 bg-white text-secondary-700 text-xs font-medium"
                   >
                     {{ tool }}
                   </span>
@@ -111,8 +111,8 @@
         </div>
 
         <!-- Design Skills -->
-        <div class="bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 shadow-xl card-hover">
-          <div class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mb-6">
+        <div class="card-style">
+          <div class="w-16 h-16 bg-accent-100 flex items-center justify-center mb-6 border-2 border-accent-200">
             <i class="fas fa-palette text-accent-600 text-2xl"></i>
           </div>
           <h3 class="text-2xl font-bold text-gray-800 mb-4">Design</h3>
@@ -129,9 +129,9 @@
                 <span class="font-medium text-gray-700">{{ skill.name }}</span>
                 <span class="text-accent-600 font-bold">{{ skill.level }}%</span>
               </div>
-              <div class="h-2 bg-gray-200 rounded-full overflow-hidden mt-1">
+              <div class="h-2 bg-gray-200 overflow-hidden mt-1">
                 <div 
-                  class="h-full bg-gradient-to-r from-accent-500 to-accent-600 rounded-full transition-all duration-1000"
+                  class="h-full bg-gradient-to-r from-accent-400 to-accent-600 rounded-full transition-all duration-1000"
                   :style="{ width: skill.level + '%' }"
                   :class="{ 'animate-pulse': expandedSkill === skill.name }"
                 ></div>
@@ -140,14 +140,14 @@
               <!-- Skill Details -->
               <div 
                 v-if="expandedSkill === skill.name"
-                class="mt-3 p-4 bg-accent-50 rounded-xl animate-scale-up"
+                class="mt-3 p-4 bg-accent-50 animate-scale-up"
               >
                 <p class="text-sm text-gray-600 mb-2">{{ skill.description }}</p>
                 <div class="flex flex-wrap gap-2">
                   <span 
                     v-for="tool in skill.tools" 
                     :key="tool"
-                    class="px-3 py-1 bg-white text-accent-700 text-xs font-medium rounded-full"
+                    class="px-3 py-1 bg-white text-accent-700 text-xs font-medium"
                   >
                     {{ tool }}
                   </span>
@@ -159,46 +159,18 @@
       </div>
 
       <!-- Additional Skills -->
-      <div class="mt-12 bg-gradient-to-r from-gray-50 to-white rounded-3xl p-8 shadow-xl">
+      <div class="mt-12 card-style">
         <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Additional Capabilities</h3>
         <div class="flex flex-wrap justify-center gap-4">
           <div 
             v-for="skill in additionalSkills" 
             :key="skill"
-            class="px-6 py-3 bg-white rounded-xl shadow hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center space-x-3"
+            class="px-6 py-3 card-style flex items-center space-x-4"
           >
-            <div class="w-10 h-10 bg-success-100 rounded-lg flex items-center justify-center">
+            <div class="w-10 h-10 bg-success-100 flex items-center justify-center">
               <i class="fas fa-check text-success-600"></i>
             </div>
             <span class="font-medium text-gray-700">{{ skill }}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skill Visualization -->
-      <div class="mt-16 text-center">
-        <h3 class="text-2xl font-bold text-gray-800 mb-8">Skill Progression</h3>
-        <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-xl">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div 
-              v-for="progress in skillProgression" 
-              :key="progress.year"
-              class="text-center"
-            >
-              <div class="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-2">
-                {{ progress.year }}
-              </div>
-              <div class="text-gray-600 font-medium">{{ progress.focus }}</div>
-              <div class="mt-4 space-y-2">
-                <div 
-                  v-for="skill in progress.skills" 
-                  :key="skill"
-                  class="text-sm text-gray-500"
-                >
-                  • {{ skill }}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

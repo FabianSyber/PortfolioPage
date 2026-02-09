@@ -1,9 +1,5 @@
 <template>
   <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-    <!-- Animated Background Elements -->
-    <div class="absolute inset-0 z-0 bg-pattern">
-    </div>
-
     <div class="container mx-auto px-6 py-20 text-center relative z-10">
       <!-- Main Heading -->
       <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">

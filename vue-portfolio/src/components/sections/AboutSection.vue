@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="section-container bg-white">
-    <div class="mx-auto">
+    <div>
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
@@ -8,7 +8,7 @@
             About Me
           </span>
         </h2>
-        <div class="w-24 h-1 bg-secondary-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-2 bg-secondary-500 mx-auto"></div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 items-center">

@@ -1,17 +1,17 @@
 <template>
-  <section id="experience" class="section-container bg-gradient-to-b from-white to-gray-50">
+  <section id="experience" class="section-container">
     <div class="max-w-6xl mx-auto">
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+          <span class="text-primary-500">
             Experience & Education
           </span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
           My professional journey through architecture, technology, and innovation.
         </p>
-        <div class="w-24 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-2 bg-primary-500 mx-auto"></div>
       </div>
 
       <!-- Timeline -->
@@ -33,9 +33,6 @@
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               ]"
             >
-              <!-- Timeline Dot -->
-              <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white bg-gradient-to-r from-primary-500 to-secondary-500 z-10 hidden md:block"></div>
-
               <!-- Date -->
               <div 
                 :class="[
@@ -43,15 +40,15 @@
                   index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'
                 ]"
               >
-                <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary-100 to-secondary-100">
-                  <span class="font-bold text-primary-700">{{ item.date }}</span>
+                <div class="inline-block px-4 py-2 bg-primary-500">
+                  <span class="font-bold text-white">{{ item.date }}</span>
                 </div>
               </div>
 
               <!-- Content Card -->
               <div class="w-full md:w-3/5">
                 <div 
-                  class="bg-white rounded-3xl p-8 shadow-xl card-hover transform transition-all duration-500 hover:scale-[1.02]"
+                  class="card-style"
                   @mouseenter="hoveredItem = item.id"
                   @mouseleave="hoveredItem = null"
                 >
@@ -134,7 +131,8 @@
                   </div>
 
                   <!-- Expand/Collapse Button -->
-                  <button 
+                  <BaseButton
+                    variant="primary"
                     v-if="item.details"
                     @click="toggleExpand(item.id)"
                     class="w-full mt-4 py-3 rounded-xl border-2 border-gray-200 hover:border-primary-300 text-gray-600 hover:text-primary-600 font-medium transition-all duration-300 flex items-center justify-center"
@@ -144,7 +142,7 @@
                       'fas ml-2 transition-transform duration-300',
                       expandedItem === item.id ? 'fa-chevron-up' : 'fa-chevron-down'
                     ]"></i>
-                  </button>
+                  </BaseButton>
                 </div>
               </div>
             </div>
@@ -177,6 +175,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import BaseButton from '../ui/BaseButton.vue'
 
 const expandedItem = ref<string | null>(null)
 const hoveredItem = ref<string | null>(null)
