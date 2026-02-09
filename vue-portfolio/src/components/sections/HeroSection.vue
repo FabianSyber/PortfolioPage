@@ -42,10 +42,10 @@
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-in-right">
-        <a href="#projects" class="btn-primary">
+        <BaseButton href="#projects" variant="primary">
           <i class="fas fa-rocket mr-2"></i>
           View Projects
-        </a>
+        </BaseButton>
         <a href="#contact" class="btn-secondary">
           <i class="fas fa-envelope mr-2"></i>
           Get In Touch
@@ -68,6 +68,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import BaseButton from '../ui/BaseButton.vue'
 
 const roles = ['Architect', 'Programmer', 'Designer', 'Innovator']
 const currentRoleIndex = ref(0)

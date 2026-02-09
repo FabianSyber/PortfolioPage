@@ -27,14 +27,14 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
-import HeroSection from './components/HeroSection.vue'
-import AboutSection from './components/AboutSection.vue'
-import ProjectsSection from './components/ProjectsSection.vue'
-import SkillsSection from './components/SkillsSection.vue'
-import ExperienceSection from './components/ExperienceSection.vue'
-import ContactSection from './components/ContactSection.vue'
-import FooterSection from './components/FooterSection.vue'
+import NavBar from './components/layout/NavBar.vue'
+import HeroSection from './components/sections/HeroSection.vue'
+import AboutSection from './components/sections/AboutSection.vue'
+import ProjectsSection from './components/sections/ProjectsSection.vue'
+import SkillsSection from './components/sections/SkillsSection.vue'
+import ExperienceSection from './components/sections/ExperienceSection.vue'
+import ContactSection from './components/sections/ContactSection.vue'
+import FooterSection from './components/layout/Footer.vue'
 </script>
 
 <style scoped>
