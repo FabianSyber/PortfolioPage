@@ -1,0 +1,1 @@
+const t="Hammarkullen",e="2021",n="Gothenburg, Sweden",o="Competition",c="Framtiden",s=["Urban","Architecture"],a={title:t,year:e,location:n,status:o,client:c,categories:s};export{s as categories,c as client,a as default,n as location,o as status,t as title,e as year};

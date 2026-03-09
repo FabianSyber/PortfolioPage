@@ -1,0 +1,1 @@
+const t="Frankie",e="2018",o="Gothenburg, Sweden",c="Student Project",n="Chalmers school of Architecture",s=["Architecture","Digital Fabrication"],r={title:t,year:e,location:o,status:c,client:n,categories:s};export{s as categories,n as client,r as default,o as location,c as status,t as title,e as year};

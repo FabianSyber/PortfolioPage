@@ -1,0 +1,1 @@
+const t="Deep Architecture",e="2020",c="Gothenburg, Sweden",o="Thesis project",s="Chalmers school of Architecture",n=["Coding","Architecture"],r={title:t,year:e,location:c,status:o,client:s,categories:n};export{n as categories,s as client,r as default,c as location,o as status,t as title,e as year};

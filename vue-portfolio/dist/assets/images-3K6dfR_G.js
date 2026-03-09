@@ -1,0 +1,1 @@
+const e=["/images/linkep/a1.png","/images/linkep/a2.png","/images/linkep/b1.png","/images/linkep/b2.png","/images/linkep/c.png","/images/linkep/d.png","/images/linkep/e.png","/images/linkep/f.png","/images/linkep/g.png"];export{e as default};

@@ -1,0 +1,1 @@
+const t="Lierstranda",e="2022",n="Drammen, Norway",o="Master plan completed",a="Drammen kommune",s=["Urban","Architecture"],c={title:t,year:e,location:n,status:o,client:a,categories:s};export{s as categories,a as client,c as default,n as location,o as status,t as title,e as year};

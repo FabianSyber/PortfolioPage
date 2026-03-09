@@ -1,0 +1,1 @@
+const t="Augmented Architect",e="2023",n="Sweden",o="Ongoing development",c="Internal",s=["Coding","Architecture"],i={title:t,year:e,location:n,status:o,client:c,categories:s};export{s as categories,c as client,i as default,n as location,o as status,t as title,e as year};

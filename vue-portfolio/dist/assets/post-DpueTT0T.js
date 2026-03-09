@@ -1,0 +1,1 @@
+const t="ReFab",e="2025",o="Varberg, Sweden",n="Research project",s="Vinnova",a=["Design","Digital Fabrication"],c={title:t,year:e,location:o,status:n,client:s,categories:a};export{a as categories,s as client,c as default,o as location,n as status,t as title,e as year};

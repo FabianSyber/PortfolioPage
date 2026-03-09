@@ -1,0 +1,1 @@
+const a=["/images/hammarkullen/a.png","/images/hammarkullen/b.png","/images/hammarkullen/c.png","/images/hammarkullen/d.png","/images/hammarkullen/e.png","/images/hammarkullen/f.png","/images/hammarkullen/g.png","/images/hammarkullen/h.png","/images/hammarkullen/i.png "];export{a as default};

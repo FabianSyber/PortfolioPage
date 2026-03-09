@@ -1,0 +1,1 @@
+const a=["/images/refab/a.png","/images/refab/b.png","/images/refab/c.png","/images/refab/d.png","/images/refab/e.png","/images/refab/f.png","/images/refab/g.png","/images/refab/h.png","/images/refab/i.png","/images/refab/j.png","/images/refab/k.png","/images/refab/l.png"];export{a as default};

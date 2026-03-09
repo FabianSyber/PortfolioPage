@@ -1,0 +1,1 @@
+const t="SpeckLCA",o="2024",n="Stockholm, Sweden",c="Ongoing",e="Open Source",s=["Coding","Design"],i={title:t,year:o,location:n,status:c,client:e,categories:s};export{s as categories,e as client,i as default,n as location,c as status,t as title,o as year};

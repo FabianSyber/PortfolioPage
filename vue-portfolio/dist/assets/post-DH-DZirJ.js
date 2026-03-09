@@ -1,0 +1,1 @@
+const t="LINK EP",e="2023",o="Denmark",c="Development",n="LINK Arkitektur",s=["Coding","Architecture"],r={title:t,year:e,location:o,status:c,client:n,categories:s};export{s as categories,n as client,r as default,o as location,c as status,t as title,e as year};
