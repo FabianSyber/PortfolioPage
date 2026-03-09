@@ -3,11 +3,8 @@
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
         <!-- Logo -->
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-xl">FS</span>
-          </div>
-          <span class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+        <div class="flex items-center">
+          <span class="text-2xl font-bold text-primary-500">
             Fabian Sellberg
           </span>
         </div>
@@ -17,15 +14,15 @@
           <a v-for="item in navItems" 
              :key="item.id" 
              :href="item.href"
-             class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 relative group"
+             class="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-300 relative group"
              @click.prevent="scrollToSection(item.id)">
             {{ item.label }}
-            <span class="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 group-hover:w-full transition-all duration-300"></span>
+            <span class="absolute -bottom-1 left-0 w-0 h-1 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
           </a>
         </div>
 
         <!-- Mobile Menu Button -->
-        <button @click="toggleMobileMenu" class="md:hidden text-gray-700 hover:text-primary-600">
+        <button @click="toggleMobileMenu" class="md:hidden text-gray-700 hover:text-primary-500">
           <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
@@ -35,7 +32,7 @@
         <a v-for="item in navItems" 
            :key="item.id" 
            :href="item.href"
-           class="block py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300"
+           class="block py-2 text-gray-700 hover:text-primary-500 font-medium transition-colors duration-300"
            @click.prevent="scrollToSection(item.id)">
           {{ item.label }}
         </a>

@@ -12,19 +12,19 @@
 
 ### Process
 
-The project began with material testing to understand how wood can be manipulated through **sewing techniques**. By stitching two pieces of bent wood together, a reversible bending effect was achieved, forming a structural system. Wire was then used to connect the wooden frame to a **rammed earth base**, reinforcing both elements without additional supports.
+The project began with material testing to understand how wood can be manipulated through sewing techniques. By stitching two pieces of bent wood together, a reversible bending effect was achieved, forming a structural system. Wire was then used to connect the wooden frame to a rammed earth base, reinforcing both elements without additional supports.
 
-Scaling up to a **three-meter-high** pavilion introduced challenges requiring CNC-milled joints. A digital 3D model ensured millimeter precision in overlapping holes for sewing, allowing for an **efficient and accurate assembly** process.
+Scaling up to a three-meter-high pavilion introduced challenges requiring CNC-milled joints. A digital 3D model ensured millimeter precision in overlapping holes for sewing, allowing for an efficient and accurate assembly process.
 
 ### Implementation
 
-- **Material Experimentation**: Understanding the interaction of wood, wire, and earth
-- **Structural Innovation**: Using thread-based fusion techniques for tensile and compressive strength
-- **Digital Fabrication**: CNC-milled joints for precision assembly
-- **Counterweight System**: Bricks integrated to provide additional stability
+- Material Experimentation: Understanding the interaction of wood, wire, and earth
+- Structural Innovation: Using thread-based fusion techniques for tensile and compressive strength
+- Digital Fabrication: CNC-milled joints for precision assembly
+- Counterweight System: Bricks integrated to provide additional stability
 
 ### Design Principles
 
-- **Material Synergy**: Exploring the natural properties of wood, wire, and earth
-- **Parametric Precision**: Digital modeling to ensure seamless assembly
-- **Adaptive Construction**: A modular approach allowing for iterative refinement
+- Material Synergy: Exploring the natural properties of wood, wire, and earth
+- Parametric Precision: Digital modeling to ensure seamless assembly
+- Adaptive Construction: A modular approach allowing for iterative refinement
